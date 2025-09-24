@@ -1,17 +1,28 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import news from "../../data/news.json";
-const { slug } = Astro.params;
-const item = news.find(n => n.slug === slug);
-if (!item) {
-  throw new Error("Not found");
+
+// Ensure this page is statically prerendered
+export const prerender = true;
+
+// Generate one page per news item
+export async function getStaticPaths() {
+  return news.map((n) => ({
+    params: { slug: n.slug },
+    props: { item: n }, // pass the matched item into the page
+  }));
 }
+
+// Receive the matched item from getStaticPaths
+const { item } = Astro.props;
 ---
+
 <BaseLayout title={item.title_en}>
   <article class="container-responsive prose max-w-3xl">
     <h1>{item.title_en}</h1>
     <p class="text-sm text-gray-500">{new Date(item.dateISO).toLocaleDateString()}</p>
-    <img src={item.coverUrl} alt="" />
+    {item.coverUrl && <img src={item.coverUrl} alt="" />}
+    <!-- If your body is HTML, render it directly; otherwise convert to HTML as needed -->
     <div set:html={item.body_en} />
   </article>
 </BaseLayout>
