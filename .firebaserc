@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "prod": "fcedu-website"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

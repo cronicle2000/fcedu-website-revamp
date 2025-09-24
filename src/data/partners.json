@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Partner A",
+    "logoUrl": "/logos/partner-a.svg",
+    "url": "#",
+    "category": "school"
+  },
+  {
+    "name": "Partner B",
+    "logoUrl": "/logos/partner-b.svg",
+    "url": "#",
+    "category": "ngo"
+  },
+  {
+    "name": "Partner C",
+    "logoUrl": "/logos/partner-c.svg",
+    "url": "#",
+    "category": "brand"
+  }
+]

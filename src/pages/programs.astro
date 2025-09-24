@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader";
+import ProgramCard from "../components/ProgramCard";
+import programs from "../data/programs.json";
+import dict from "../i18n/en.json";
+---
+<BaseLayout title="Programs">
+  <SectionHeader eyebrow="Programs" title={dict.programs.title} blurb={dict.programs.subtitle} />
+  <section class="container-responsive grid md:grid-cols-3 gap-6">
+    {programs.map((p) => <ProgramCard program={{slug:p.slug,title:p.title_en,description:p.description_en,image:p.image,ageRange:p.ageRange,outcomes:p.outcomes_en}} />)}
+  </section>
+</BaseLayout>

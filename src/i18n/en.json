@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "branches": "Branches",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Guiding Students to Confident Success",
+    "subtitle": "Conor by FCEDU supports learners with proven coaching, caring mentors, and a community that believes in every student.",
+    "primaryCta": "Explore Programs",
+    "secondaryCta": "Contact Us"
+  },
+  "valueProps": [
+    {
+      "title": "Experienced Educators",
+      "desc": "Our coaches bring classroom expertise and real-world empathy."
+    },
+    {
+      "title": "Personalized Guidance",
+      "desc": "Tailored study plans and one-on-one check-ins keep progress on track."
+    },
+    {
+      "title": "Community & Parents",
+      "desc": "Transparent updates, workshops, and support beyond the classroom."
+    }
+  ],
+  "about": {
+    "missionTitle": "Our Mission",
+    "mission": "We help students build confidence and skills through structured coaching, modern tools, and human warmth.",
+    "timelineTitle": "Our Story",
+    "teamTitle": "Leadership"
+  },
+  "programs": {
+    "title": "Programs",
+    "subtitle": "From foundational skills to exam readiness \u2014 clear milestones, caring guidance.",
+    "seeDetails": "See details"
+  },
+  "branches": {
+    "title": "Branches",
+    "subtitle": "Visit a Conor branch near you or chat with us on WhatsApp."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Tell us about your child\u2019s goals. We\u2019ll reply within 1\u20132 working days.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "branch": "Preferred Branch (optional)",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Thanks! We\u2019ve received your message.",
+    "error": "Sorry, something went wrong. Please try again later."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

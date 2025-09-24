@@ -1,0 +1,46 @@
+---
+import "../styles/tokens.css";
+import "../styles/base.css";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import { getSeoTags } from "../lib/seo";
+const { title = "Conor", description = "", canonical = Astro.url.toString(), noindex = false } = Astro.props;
+const seo = getSeoTags({ title, description, canonical, noindex });
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0A4D9D" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <script is:inline>
+      // Reduce motion preference helper
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('reduce-motion');
+      }
+    </script>
+    {seo && <Fragment set:html={seo} />}
+    {plausibleDomain && (
+      <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
+    )}
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header class="bg-white/80 backdrop-blur border-b border-black/5 sticky top-0 z-40">
+      <div class="container-responsive">
+        <NavBar />
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="mt-16 border-t border-black/5">
+      <div class="container-responsive">
+        <Footer />
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero";
+import LogoWall from "../components/LogoWall";
+import SectionHeader from "../components/SectionHeader";
+import ValuePropCard from "../components/ValuePropCard";
+import ProgramCard from "../components/ProgramCard";
+import Testimonial from "../components/Testimonial";
+import partners from "../data/partners.json";
+import programs from "../data/programs.json";
+import dict from "../i18n/en.json";
+---
+<BaseLayout title="Home" description="Conor by FCEDU — modern coaching for confident outcomes.">
+  <Hero title={dict.hero.title} subtitle={dict.hero.subtitle} />
+  <LogoWall logos={partners.map(p => ({src: p.logoUrl, alt: p.name, href: p.url}))} />
+
+  <SectionHeader eyebrow="Why Conor" title="A caring, structured path to success" blurb="We combine proven methods with human guidance." />
+  <section class="container-responsive grid md:grid-cols-3 gap-6">
+    {dict.valueProps.map((v) => <ValuePropCard title={v.title} desc={v.desc} />)}
+  </section>
+
+  <SectionHeader eyebrow="Programs" title="Featured Programs" />
+  <section class="container-responsive grid md:grid-cols-3 gap-6">
+    {programs.slice(0,3).map((p) => <ProgramCard program={{slug:p.slug,title:p.title_en,description:p.description_en,image:p.image,ageRange:p.ageRange,outcomes:p.outcomes_en}} />)}
+  </section>
+
+  <SectionHeader eyebrow="Stories" title="What families say" />
+  <section class="container-responsive grid md:grid-cols-2 gap-6">
+    <Testimonial quote="My child found their confidence again. The coaches truly cared." author="Parent of Secondary Student" />
+    <Testimonial quote="Clear milestones and regular feedback—very reassuring." author="Primary Parent" />
+  </section>
+
+  <div class="container-responsive my-12 flex items-center gap-4">
+    <a class="btn btn-primary" href="/programs">Explore all programs</a>
+    <a class="btn btn-ghost" href="/contact">Contact us</a>
+  </div>
+</BaseLayout>

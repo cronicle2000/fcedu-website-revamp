@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import news from "../../data/news.json";
+const { slug } = Astro.params;
+const item = news.find(n => n.slug === slug);
+if (!item) {
+  throw new Error("Not found");
+}
+---
+<BaseLayout title={item.title_en}>
+  <article class="container-responsive prose max-w-3xl">
+    <h1>{item.title_en}</h1>
+    <p class="text-sm text-gray-500">{new Date(item.dateISO).toLocaleDateString()}</p>
+    <img src={item.coverUrl} alt="" />
+    <div set:html={item.body_en} />
+  </article>
+</BaseLayout>

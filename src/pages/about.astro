@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PersonCard from "../components/PersonCard";
+import SectionHeader from "../components/SectionHeader";
+import team from "../data/team.json";
+import dict from "../i18n/en.json";
+---
+<BaseLayout title="About">
+  <SectionHeader eyebrow="About Conor" title={dict.about.missionTitle} blurb={dict.about.mission} />
+  <section class="container-responsive grid md:grid-cols-3 gap-6">
+    {team.map((m) => <PersonCard photo={m.photoUrl} name={m.name} role={m.role_en} bio={m.bio_en} />)}
+  </section>
+</BaseLayout>

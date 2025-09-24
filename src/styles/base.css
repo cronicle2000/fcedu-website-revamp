@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html:focus-within { scroll-behavior: smooth; }
+  body {
+    @apply bg-white text-conor-text antialiased;
+    font-feature-settings: "ss01","cv02","cv11";
+  }
+  .dark body { @apply bg-[#0B1220]; }
+}
+
+@layer components {
+  .container-responsive {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-conor-secondary;
+  }
+  .btn-primary {
+    @apply bg-conor-primary text-white hover:brightness-110;
+  }
+  .btn-ghost {
+    @apply bg-transparent border border-conor-primary text-conor-primary hover:bg-conor-primary/10;
+  }
+  .card {
+    @apply rounded-2xl bg-conor-surface shadow-[var(--shadow-card)] p-6;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full bg-conor-primary/10 text-conor-primary px-3 py-1 text-xs;
+  }
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    @apply z-50 bg-white text-conor-primary rounded px-3 py-2 shadow;
+  }
+}

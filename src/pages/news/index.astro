@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionHeader from "../../components/SectionHeader";
+import news from "../../data/news.json";
+---
+<BaseLayout title="News">
+  <SectionHeader eyebrow="News" title="News & Events" blurb="Latest updates from Conor." />
+  <section class="container-responsive grid gap-6">
+    {news.map((n) => (
+      <article class="card">
+        <a href={`/news/${n.slug}`} class="block">
+          <h3 class="text-lg font-semibold text-conor-primary">{n.title_en}</h3>
+          <p class="text-sm text-gray-500">{new Date(n.dateISO).toLocaleDateString()}</p>
+          <p class="mt-2 text-gray-700">{n.excerpt_en}</p>
+        </a>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

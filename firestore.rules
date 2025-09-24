@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read of published content collections
+    match /partners/{doc} { allow read: if true; allow write: if false; }
+    match /programs/{doc} { allow read: if true; allow write: if false; }
+    match /branches/{doc} { allow read: if true; allow write: if false; }
+    match /team/{doc} { allow read: if true; allow write: if false; }
+    match /news/{doc} { allow read: if true; allow write: if false; }
+
+    // Leads are write-only via Cloud Functions (Admin SDK bypasses rules)
+    match /leads/{doc} {
+      allow read: if false;
+      allow write: if false;
+    }
+
+    // Default deny
+    match /{document=**} { allow read, write: if false; }
+  }
+}

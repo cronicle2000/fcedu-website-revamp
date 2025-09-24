@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Conor Lead",
+    "role_en": "Academic Director",
+    "role_zh": "\u5b78\u8853\u7e3d\u76e3",
+    "bio_en": "Educator with 10+ years supporting students and families.",
+    "bio_zh": "\u5341\u5e74\u4ee5\u4e0a\u6559\u5b78\u7d93\u9a57\uff0c\u91cd\u8996\u5bb6\u6821\u6e9d\u901a\u3002",
+    "photoUrl": "/images/team-1.jpg",
+    "order": 1
+  },
+  {
+    "name": "Coach A",
+    "role_en": "Senior Coach",
+    "role_zh": "\u8cc7\u6df1\u6559\u7df4",
+    "bio_en": "Focus on personalized learning plans and student wellbeing.",
+    "bio_zh": "\u5c08\u6ce8\u500b\u5225\u5316\u5b78\u7fd2\u8207\u5b78\u751f\u8eab\u5fc3\u5e73\u8861\u3002",
+    "photoUrl": "/images/team-2.jpg",
+    "order": 2
+  }
+]

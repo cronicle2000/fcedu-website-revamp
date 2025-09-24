@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader";
+import BranchCard from "../components/BranchCard";
+import branches from "../data/branches.json";
+import dict from "../i18n/en.json";
+---
+<BaseLayout title="Branches">
+  <SectionHeader eyebrow="Visit Us" title={dict.branches.title} blurb={dict.branches.subtitle} />
+  <section class="container-responsive grid md:grid-cols-2 gap-6">
+    {branches.map((b) => <BranchCard name={b.name_en} address={b.address_en} hours={b.hours_en} whatsapp={b.whatsappLink} mapEmbed={b.mapEmbed} />)}
+  </section>
+</BaseLayout>

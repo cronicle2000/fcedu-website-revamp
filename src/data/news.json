@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "welcome-to-conor",
+    "title_en": "Welcome to Conor",
+    "title_zh": "\u6b61\u8fce\u4f86\u5230 Conor",
+    "excerpt_en": "We are excited to launch our refreshed website.",
+    "excerpt_zh": "\u5f88\u9ad8\u8208\u8207\u60a8\u898b\u9762\uff01",
+    "body_en": "<p>Our new site makes it easier to discover programs and get in touch.</p>",
+    "body_zh": "<p>\u5168\u65b0\u7db2\u7ad9\u4e0a\u7dda\uff01\u66f4\u5bb9\u6613\u627e\u5230\u8ab2\u7a0b\u8207\u806f\u7d61\u6211\u5011\u3002</p>",
+    "dateISO": "2025-09-01",
+    "coverUrl": "/images/news-1.jpg",
+    "tags": [
+      "announcement"
+    ]
+  }
+]

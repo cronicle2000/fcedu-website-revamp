@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero";
+import LogoWall from "../../components/LogoWall";
+import SectionHeader from "../../components/SectionHeader";
+import ValuePropCard from "../../components/ValuePropCard";
+import partners from "../../data/partners.json";
+import programs from "../../data/programs.json";
+import zh from "../../i18n/zh.json";
+---
+<BaseLayout title="首頁" description="Conor — 現代化教學與貼心陪伴。">
+  <Hero title={zh.hero.title} subtitle={zh.hero.subtitle} />
+  <LogoWall logos={partners.map(p => ({src: p.logoUrl, alt: p.name, href: p.url}))} />
+  <SectionHeader eyebrow="為什麼選擇 Conor" title="結構化教學 × 人文關懷" blurb="以成果為導向，兼顧學生身心。" />
+  <section class="container-responsive grid md:grid-cols-3 gap-6">
+    {zh.valueProps.map((v) => <ValuePropCard title={v.title} desc={v.desc} />)}
+  </section>
+  <div class="container-responsive my-12 flex items-center gap-4">
+    <a class="btn btn-primary" href="/programs">查看課程</a>
+    <a class="btn btn-ghost" href="/contact">聯絡我們</a>
+  </div>
+</BaseLayout>

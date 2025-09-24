@@ -1,0 +1,14 @@
+[
+  {
+    "name_en": "Conor Mid Valley",
+    "name_zh": "Conor \u8c37\u4e2d\u57ce",
+    "address_en": "Mid Valley City, Kuala Lumpur",
+    "address_zh": "\u5409\u9686\u5761 \u8c37\u4e2d\u57ce",
+    "latLng": "3.1176,101.6770",
+    "hours_en": "Mon\u2013Fri 10:00\u201319:00, Sat 10:00\u201316:00",
+    "hours_zh": "\u9031\u4e00\u81f3\u9031\u4e94 10:00\u201319:00, \u9031\u516d 10:00\u201316:00",
+    "whatsappLink": "https://wa.me/60123456789",
+    "email": "hello@fcedu.com.my",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15935.761!2d101.675!3d3.118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4b00c3!2sMid+Valley+City!5e0!3m2!1sen!2smy!4v0000000000"
+  }
+]

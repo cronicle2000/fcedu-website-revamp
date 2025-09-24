@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader";
+import ContactForm from "../components/ContactForm";
+import dict from "../i18n/en.json";
+---
+<BaseLayout title="Contact">
+  <SectionHeader eyebrow="Get in touch" title={dict.contact.title} blurb={dict.contact.subtitle} />
+  <section class="container-responsive py-6">
+    <ContactForm client:load />
+    <div class="mt-8 text-sm text-gray-600">
+      Or chat with us on <a href="https://wa.me/60123456789" class="text-conor-link underline">WhatsApp</a>.
+    </div>
+  </section>
+</BaseLayout>
