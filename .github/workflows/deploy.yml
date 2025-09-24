@@ -22,21 +22,20 @@ jobs:
           node-version: '20'
       - name: Install
         run: npm ci
-      - name: Build
-        env:
-          PUBLIC_SITE_URL: https://fcedu.com.my
-          PUBLIC_PLAUSIBLE_DOMAIN: fcedu.com.my
       - name: Setup service account file for Firestore export
         run: |
           echo "$GCP_SA_KEY_BASE64" | base64 -d > $RUNNER_TEMP/serviceAccount.json
         env:
           GCP_SA_KEY_BASE64: ${{ secrets.GCP_SA_KEY_BASE64 }}
-
       - name: Export Firestore → JSON snapshots
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/serviceAccount.json
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
         run: npm run data:pull
+      - name: Build
+        env:
+          PUBLIC_SITE_URL: https://fcedu.com.my
+          PUBLIC_PLAUSIBLE_DOMAIN: fcedu.com.my
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
