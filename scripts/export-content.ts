@@ -3,11 +3,22 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import admin from 'firebase-admin';
 
-// Use GOOGLE_APPLICATION_CREDENTIALS env to point to a service account JSON
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.applicationDefault()
-  });
+// Prefer JSON from env (CI) else application default (local)
+const rawJson = process.env.GCP_SA_KEY_JSON;
+if (rawJson) {
+  const creds = JSON.parse(rawJson);
+  if (!admin.apps.length) {
+    admin.initializeApp({
+      credential: admin.credential.cert(creds),
+      projectId: creds.project_id,
+    } as any);
+  }
+} else {
+  if (!admin.apps.length) {
+    admin.initializeApp({
+      credential: admin.credential.applicationDefault(),
+    });
+  }
 }
 const db = admin.firestore();
 
