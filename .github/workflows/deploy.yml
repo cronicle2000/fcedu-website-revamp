@@ -26,7 +26,7 @@ jobs:
         env:
           PUBLIC_SITE_URL: https://fcedu.com.my
           PUBLIC_PLAUSIBLE_DOMAIN: fcedu.com.my
-        - name: Setup service account file for Firestore export
+      - name: Setup service account file for Firestore export
         run: |
           echo "$GCP_SA_KEY_BASE64" | base64 -d > $RUNNER_TEMP/serviceAccount.json
         env:
